@@ -7,7 +7,6 @@ import olafenko.com.moviemanager.repository.MovieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -33,8 +32,8 @@ public class MovieService {
         return movieRepository.findMovieById(id).orElseThrow(() -> new UserNotFoundException("Movie with id" + id + " not found."));
     }
 
-    public void deleteMovie(Long id){
-        movieRepository.deleteMovieById(id);
+    public void deleteMovieById(Long id){
+        movieRepository.deleteById(id);
     }
 
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie,Long> {
-    void deleteMovieById(Long id);
+
 
     Optional<Movie> findMovieById(Long id);
 

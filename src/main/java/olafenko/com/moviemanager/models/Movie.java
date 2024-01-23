@@ -25,12 +25,12 @@ public class Movie implements Serializable {
     private String scenario;
     private String genre;
     private String production;
-    private LocalDateTime premiere;
+    private String premiere;
     private String imageUrl;
     @Column(nullable = false,updatable = false)
     private String movieCode;
 
-    public Movie(String title, String description, String direction, String scenario, String genre, String production, LocalDateTime premiere, String imageUrl, String movieCode) {
+    public Movie(String title, String description, String direction, String scenario, String genre, String production, String premiere, String imageUrl, String movieCode) {
         this.title = title;
         this.description = description;
         this.direction = direction;
