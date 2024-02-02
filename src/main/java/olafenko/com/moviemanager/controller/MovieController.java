@@ -12,6 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/movie")
 @AllArgsConstructor
+@CrossOrigin("http://localhost:4200")
+
 public class MovieController {
 
     private final MovieService movieService;
@@ -29,9 +31,9 @@ public class MovieController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Movie> addMovie(@RequestBody Movie movie){
-        Movie newMovie = movieService.addMovie(movie);
-        return new ResponseEntity<>(newMovie, HttpStatus.CREATED);
+    public ResponseEntity<?> addMovie(@RequestBody Movie movie){
+
+        return movieService.addMovie(movie);
     }
 
     @PutMapping("/update")
